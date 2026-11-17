@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6E7D8">
+  <meta name="description" content="Explore a miniature Seoul from dawn to night, through palace courtyards, hanok lanes, and neon streets.">
+  <title>SEOUL 서울 — One small city, one whole day.</title>
+  <link rel="icon" href="data:,">
+  <link rel="preload" as="image" href="assets/scene1.webp">
+  <style>
+    :root {
+      color-scheme: light;
+      background: #F6E7D8;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    body { margin: 0; background: #F6E7D8; }
+    .sw-root {
+      --sw-bg: #F6E7D8;
+      --sw-ink: #30283B;
+      --sw-ink-soft: #6C6172;
+      --sw-accent: #4A7AB5;
+      --sw-font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --sw-font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .sw-root.sw-night{--sw-ink:#F6EEE6;--sw-ink-soft:#C9C2D8}
+    noscript { display: block; padding: 2rem; max-width: 42rem; margin: auto; }
+    noscript img { width: 100%; height: auto; }
+  </style>
+</head>
+<body id="top">
+  <main id="world" aria-label="SEOUL — a miniature city from dawn to night"></main>
+  <noscript>
+    <h1>SEOUL</h1>
+    <p>One small city, one whole day.</p>
+    <img src="assets/scene1.webp" alt="A miniature Seoul at dawn">
+    <p>Enable JavaScript to explore Seoul from dawn to night.</p>
+    <a href="https://cerium-web-development.vercel.app/">Start your world</a>
+  </noscript>
+  <script src="scrub-engine.js"></script>
+  <script>
+    mountScrollWorld(document.getElementById('world'), {
+      brand: { name: 'SEOUL', href: '#top' },
+      diveScroll: 1.3,
+      connScroll: 0.9,
+      sections: [
+        {
+          id: 'arrival', label: 'The Arrival',
+          still: 'assets/scene1.webp', clip: 'assets/vid/scene1.mp4',
+          accent: '#4A7AB5', eyebrow: 'DAWN',
+          title: 'One small city, one whole day.',
+          body: 'A miniature Seoul wakes up — the Han River bends gold, blossom along the banks, the tower catching first light.',
+          tags: ['Miniature diorama', 'Dawn'], scroll: 1.6, linger: 0.45
+        },
+        {
+          id: 'gyeongbokgung', label: 'Gyeongbokgung',
+          still: 'assets/scene2.webp', clip: 'assets/vid/scene2.mp4',
+          accent: '#2F6B5E', eyebrow: 'MORNING',
+          title: 'The palace wakes first.',
+          body: 'Teal roofs, a wide stone courtyard, and the mountain standing guard behind it all.',
+          tags: ['Gyeongbokgung', 'Since 1395']
+        },
+        {
+          id: 'bukchon', label: 'Bukchon',
+          still: 'assets/scene3.webp', clip: 'assets/vid/scene3.mp4',
+          accent: '#8A5A3B', eyebrow: 'AFTERNOON',
+          title: 'Roofs that remember.',
+          body: 'Hanok lanes climb the hill, tile by tile, while the modern city waits politely below.',
+          tags: ['Hanok Village', 'Old Seoul']
+        },
+        {
+          id: 'namsan', label: 'Namsan',
+          still: 'assets/scene4.webp', clip: 'assets/vid/scene4.mp4',
+          accent: '#E8A0B4', eyebrow: 'GOLDEN HOUR',
+          title: 'Up to the tower.',
+          body: 'A cable car climbs the green hill, and the whole city turns gold beneath the tower.',
+          tags: ['N Seoul Tower', 'Cable car']
+        },
+        {
+          id: 'hongdae', label: 'Hongdae',
+          still: 'assets/scene5.webp', clip: 'assets/vid/scene5.mp4', dark: true,
+          accent: '#FF5A8A', eyebrow: 'DUSK',
+          title: 'The streets turn neon.',
+          body: 'Signs warming up in pink and cyan, string lights on, and a plaza ready for buskers.',
+          tags: ['Hongdae', 'Night markets']
+        },
+        {
+          id: 'finale', label: 'Your World Next',
+          still: 'assets/scene6.webp', clip: 'assets/vid/scene6.mp4', dark: true,
+          accent: '#FFB347', eyebrow: 'YOUR WORLD NEXT',
+          title: 'Every brand deserves a world.',
+          body: 'This one was built in a day of scrolling. Yours could be next.',
+          tags: [], scroll: 1.6, linger: 0.45,
+          cta: {
+            primary: { label: 'Start your world', href: 'https://cerium-web-development.vercel.app/' }
+          }
+        }
+      ],
+      connectors: [
+        'assets/vid/conn1.mp4',
+        'assets/vid/conn2.mp4',
+        'assets/vid/conn3.mp4',
+        'assets/vid/conn4.mp4',
+        'assets/vid/conn5.mp4'
+      ]
+    });
+  </script>
+</body>
+</html>
